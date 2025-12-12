@@ -94,20 +94,20 @@ TODO: List and describe the actors/users for this product.
 | **Description** | Describes how new users can create a their own account to loign. this can be used to access personalised features for their pub crawls. Some examples include: saving routes, showing a history of past pub crawls/routes  |
 | **Actors** | Exsisting Bristol residents and new Bristol residents |
 | **Assumptions** | 1.The servers are online and can easily store new users and their data securely 2.Users can easily access login page 3. the user has a valid email address |
-| **Steps** |  1. User goes to 'Sign up' page to make an account , 2. The user enters the details that the system requires like email and password , 3. The system checks if the email has already been used , 4. The system stores the users credentials in the database, confirming account creation , 5. The user can now login |
-| **Variations** | 1. Email already in use, 2. Missing fields (like filling out the email but not a password) |
-| **Non-functional** |  |
-| **Issues** | |
+| **Steps** |  1. User goes to 'Sign up' page to make an account 2. The user enters the details that the system requires like email and password 3. The system checks if the email has already been used  4. The system stores the users credentials in the database, confirming account creation  5. The user can now login |
+| **Variations** | 1. Email already in use 2. Missing fields (like filling out the email but not a password) |
+| **Non-functional** | Process must not take too long to complete, UI must be user friendly, any issues with the login process must be made clear to the user  |
+| **Issues** | If the user forgets their password and are unable to recover their account |
 
 | USE-CASE 6 | View Local Venues - Connor |
 | -------------------------------------- | ------------------- |
-| **Description** | |
-| **Actors** | |
-| **Assumptions** | |
-| **Steps** | |
-| **Variations** | |
-| **Non-functional** | |
-| **Issues** | |
+| **Description** | Describes how the user can view local venues near their location or chosen area to plan the pub crawl |
+| **Actors** | Exsisting Bristol residents and new Bristol residents |
+| **Assumptions** | 1. The user has access to the venue listing page 2. Information about each venue (name, opening hours, location, events) exsists in the sysems's database |
+| **Steps** | 1. User opens 'Local Venues' page 2. User inputs their current or desired location 3. System shows nearby venues and information from its database and displays in a list/map of venues 4. User selects a venue to view more details 5. System displays chosen venue and information |
+| **Variations** | 1. A choice of map view or list view to allow users to switch between formats for what is easier to use 2. Sort by options, to allow users to filter between differes things like distance, opening hours, type of music 3. Page displays 'No venues found' of there arent any in the area that the user inputs |
+| **Non-functional** | Should run on a variety of devices and browsers |
+| **Issues** | Venue information may be outdated, location accuracy may be incorrect  |
 
 | USE-CASE 7 | Generate Pub Crawl - Connor |
 | -------------------------------------- | ------------------- |
