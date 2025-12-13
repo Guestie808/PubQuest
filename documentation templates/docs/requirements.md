@@ -91,7 +91,7 @@ TODO: List and describe the actors/users for this product.
 
 | USE-CASE 5 | Create User Login - Connor |
 | -------------------------------------- | ------------------- |
-| **Description** | Describes how new users can create a their own account to loign. this can be used to access personalised features for their pub crawls. Some examples include: saving routes, showing a history of past pub crawls/routes  |
+| **Description** | How new users can create a their own account to loign. this can be used to access personalised features for their pub crawls. Some examples include: saving routes, showing a history of past pub crawls/routes  |
 | **Actors** | Exsisting Bristol residents and new Bristol residents |
 | **Assumptions** | 1.The servers are online and can easily store new users and their data securely 2.Users can easily access login page 3. the user has a valid email address |
 | **Steps** |  1. User goes to 'Sign up' page to make an account 2. The user enters the details that the system requires like email and password 3. The system checks if the email has already been used  4. The system stores the users credentials in the database, confirming account creation  5. The user can now login |
@@ -111,23 +111,23 @@ TODO: List and describe the actors/users for this product.
 
 | USE-CASE 7 | Generate Pub Crawl - Connor |
 | -------------------------------------- | ------------------- |
-| **Description** | |
-| **Actors** | |
-| **Assumptions** | |
-| **Steps** | |
-| **Variations** | |
-| **Non-functional** | |
-| **Issues** | |
+| **Description** | How the user generates a pub crawl route based on their preferences |
+| **Actors** | Exsisting Bristol residents and new Bristol residents |
+| **Assumptions** | User has entered their starting location |
+| **Steps** | 1. User navigates to the “Generate Pub Crawl” page 2. User sets preferences 3 User clicks the 'Generate Route' button 4.System fetches venue data relevant to preferences 5. System generates a route and displays it on a map and/or list |
+| **Variations** | System optimises for a route with the shortest walk, User can manually edit their generated route |
+| **Non-functional** | Should run on a variety of devices and browsers |
+| **Issues** | System may generate inefficient routes that the user cant or doesnt want to complete |
 
 | USE-CASE 8 | Activity Generator - Connor |
 | -------------------------------------- | ------------------- |
-| **Description** | |
-| **Actors** | |
-| **Assumptions** | |
-| **Steps** | |
-| **Variations** | |
-| **Non-functional** | |
-| **Issues** | |
+| **Description** | The system can generate fun challenges and activities for users to complete at each venue during a pub crawl, including forfeits if challenges are not completed. |
+| **Actors** | Exsisting Bristol residents and new Bristol residents |
+| **Assumptions** | A pub crawl route has already been generated, user has the chocie to choose if they want challenegs in their crawl, user has access to the activity generator feature |
+| **Steps** | 1. User generates a pub crawl route 2. User enables 'Activity Generator' 3. System generates a challenge for each venue on the crawl 4. System displays the challenge and associated forfeit 5. User attempts the challenge at the venue 6. User marks the challenge as completed or failed 7. System records progress and moves to the next venue’s activity |
+| **Variations** | Be able to choose the difficulty of the challenges, like easy, medium or hard. The choice to skip or reroll challaenges if the user isnt happy with their given one. Group challanges so everyone on the route has the same challenge. |
+| **Non-functional** | Should run on a variety of devices and browsers |
+| **Issues** | There may be arguments over whether a challenge was completed, repeated challenges may reduce enjoyment |
 
 
 TODO: Your Use-Case diagram should include all use-cases.
@@ -150,6 +150,8 @@ TODO: create a list of functional requirements.
     FR5 - The system shall store user login info - UC4, UC5
 
     | Connor |
+
+    FR1 - 
 
 ### Non-Functional Requirements
 TODO: Consider one or more [quality attributes](https://en.wikipedia.org/wiki/ISO/IEC_9126) to suggest a small number of non-functional requirements.
