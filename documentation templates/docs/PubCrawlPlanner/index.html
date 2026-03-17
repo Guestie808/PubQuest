@@ -1,0 +1,124 @@
+<html>
+
+    <head>
+        <title>Pub Quest - Filter Local Venues</title>
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <script>
+            function outputTable(json) {
+                let e = document.getElementById("results");
+                e.innerHTML = "";
+                let f = json.features;
+                for(let i=0;i<f.length;i++) {
+                    let tr = document.createElement("tr");
+                    e.appendChild(tr);
+    
+                    let a = f[i].attributes;
+    
+                    let td = document.createElement("td");
+                    td.innerHTML = a.MAPEAST;
+                    tr.appendChild(td);
+    
+                    td = document.createElement("td");
+                    td.innerHTML = a.MAPNORTH;
+                    tr.appendChild(td);
+
+                    td = document.createElement("td");
+                    td.innerHTML = a.TYPE_OF_PREMISE;
+                    tr.appendChild(td);
+
+                    td = document.createElement("td");
+                    td.innerHTML = a.TRADING_NAME;
+                    tr.appendChild(td);
+
+                    td = document.createElement("td");
+                    td.innerHTML = a.TRADING_ADDRESS;
+                    tr.appendChild(td);
+
+                    td = document.createElement("td");
+                    td.innerHTML = a.BUSINESS_CONTACT;
+                    tr.appendChild(td);
+                }
+            }
+    
+            function filter(type) {
+                let enc = encodeURIComponent(type);
+                let url = `https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_leisure_and_culture/MapServer/14/query?where=TYPE_OF_PREMISE%20%3D%20'${enc}'&outFields=MAPEAST,MAPNORTH,TYPE_OF_PREMISE,TRADING_NAME,TRADING_ADDRESS,BUSINESS_CONTACT&outSR=4326&f=json`;
+                fetch(url).then(r=>r.json()).then(outputTable)
+            }
+    
+            function like(type) {
+                let enc = encodeURIComponent(type);
+                let url = `https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_leisure_and_culture/MapServer/14/query?where=TYPE_OF_PREMISE%20%LIKE%20'${enc}'&outFields=MAPEAST,MAPNORTH,TYPE_OF_PREMISE,TRADING_NAME,TRADING_ADDRESS,BUSINESS_CONTACT&outSR=4326&f=json`;
+                fetch(url).then(r=>r.json()).then(outputTable)
+            }
+    
+            function query() {
+                let url = "https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_leisure_and_culture/MapServer/14/query?where=1%3D1&outFields=MAPEAST,MAPNORTH,TYPE_OF_PREMISE,TRADING_NAME,TRADING_ADDRESS,BUSINESS_CONTACT&outSR=4326&f=json"
+                fetch(url).then(r=>r.json()).then(outputTable)
+            }
+    
+            function search(searchTerm) {
+                let enc = encodeURIComponent(searchTerm);
+                let url = `https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_leisure_and_culture/MapServer/14/query?where=&text=${enc}&outFields=*&f=json`;
+                fetch(url).then(r=>r.json()).then(outputTable)
+            }
+    
+            // Request user geolocation and callback with lat, lon
+            function getLocation(page) {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition( // permission granted, denied - location defaults to central Bristol
+                        loc => window.location.href=`${page}?lat=${loc.coords.latitude}&lon=${loc.coords.longitude}`,
+                        () => window.location.href=`${page}?lat=51.454514&lon=-2.587910`
+                    )
+                }
+                else { // if unsupported feature, location defaults to central Bristol
+                    window.alert("Geolocation is not supported by this browser.");
+                    window.location.href=`${page}?lat=51.454514&lon=-2.587910`;
+                }
+            }
+    
+        </script>
+    </head>
+    
+    <body>
+        <div class="grid-container">
+            <header class="gold padded gold-gradient">
+                <span class="title">Pub Quest - Filter Local Venues</span>
+                <form id="search" action="index.html" class="nav-bar">
+                    <input name="searchterm" type="text" placeholder="Search...">
+                    <button type="submit"><i class="material-icons">search</i></button>
+                </form>
+            </header>
+            <nav class="nav-bar">
+                <button class="gold-gradient nav-button" onclick="getLocation('map.html')">View Local Venues</button>
+                <button class="gold-gradient nav-button" onclick="location.href='index.html'">Filter Local Venues</button>
+            </nav>
+            <main>
+                <div class="nav-bar">
+                    <button class = "gold-gradient nav-button" onclick="filter('Cafe Bar')">Cafe Bars</button>
+                    <button class="gold-gradient nav-button" onclick="filter('Nightclub')">Nightclubs</button>
+                    <button class="gold-gradient nav-button" onclick="filter('Public House')">Pubs</button>
+                    <button class="gold-gradient nav-button" onclick="filter('Wine Bar')">Wine Bars</button>
+                </div>
+                <table>
+                    <thead><th>Map1</th><th>Map2</th><th>Type</th><th>Name</th><th>Address</th><th>Contact</th></thead>
+                    <tbody id="results"></tbody>
+                </table>
+            </main>
+        </div>
+        <script>
+            var urlParams = new URLSearchParams(location.search);
+            var searchTerm = urlParams.get('searchterm');
+            if (searchTerm) search(searchTerm);
+            else query()
+        </script>
+    </body>
+ 
+</html>
