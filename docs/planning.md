@@ -1,5 +1,5 @@
 # Project Proposal
-Pub Crawl Planner
+Pub Quest - a pub crawl planner
 
 ## Business Case
 
