@@ -115,7 +115,7 @@
 | **Non-functional** | Should run on a variety of devices and browsers |
 | **Issues** | There may be arguments over whether a challenge was completed, repeated challenges may reduce enjoyment |
 
-!images/use-case.png
+![Diagram](images/use-case.png)
 
 ## Software Requirements Specification
 

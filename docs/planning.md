@@ -83,4 +83,4 @@ easily tackled. We will use Bristol Open Data's "Pubs and Nightclubs" dataset to
 - Acitivity Generator
 - Admins/ Engineers
 
-!images/context.png
+![Diagram](images/context.png)

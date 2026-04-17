@@ -99,10 +99,10 @@ All results - https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_leisure_
 
 Results with any field with SIMILAIR match to search input - https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_leisure_and_culture/MapServer/14/query?where=&text=${enc}&outFields=MAPEAST,MAPNORTH,TYPE_OF_PREMISE,TRADING_NAME,TRADING_ADDRESS,BUSINESS_CONTACT&outSR=4326&f=json
 
-!(images/exactClass.png)
-!(images/likeClass.png)
-!(images/allClass.png)
-!(images/searchClass.png)
+![Diagram](images/exactClass.png)
+![Diagram](images/likeClass.png)
+![Diagram](images/allClass.png)
+![Diagram](images/searchClass.png)
 
 # User guide
 TODO: Explain how each use-case works by providing step-by-step screenshots for each use-case. This should be based on a tested scenario.
