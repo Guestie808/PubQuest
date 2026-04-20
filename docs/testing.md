@@ -8,6 +8,7 @@ TODO: For each test described above, indicate the current status.
 Create a requirements traceability matrix to validate the completeness of the product.
 
 | Use-Case ID | Requirement ID | Test Case | Status |
-| ----------- | -------------- | --------- | ------ |
+| UC1 | FR1 | index.html | pass |
+|
 
 TODO: Add rows for each test, current status is eg. pass/fail
