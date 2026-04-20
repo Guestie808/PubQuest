@@ -3,6 +3,13 @@
 ## Test Plan
 TODO: Describe any manual and automated (unit) tests. Uniquely identify each test case. Include prerequisites and test data.
 
+| Test-Case ID | Test Description | Page Location | Status | Reason |
+| ------------ | ---------------- | ------------- | ------ | ------ |
+| TC1 | 
+
+example would be filter button which works so pass
+then toggle filter off whihc does work however in future we could have it so you could toggle multiple filters
+
 Test Runs
 TODO: For each test described above, indicate the current status. 
 Create a requirements traceability matrix to validate the completeness of the product.
