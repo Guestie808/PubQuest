@@ -10,11 +10,11 @@ SuperPixel (font used in titles and buttons) - link: https://www.fontspace.com/s
 MiniPixel (GomePixel - font used in "Filter Local Venues" table) - link: https://www.fontspace.com/gome-pixel-font-f119163
 
 ## Documentation
-1. [Planning](docs/planning.md)
-2. [Requirements](docs/requirements.md)
-3. [Design](docs/design.md)
-4. [Implementation](docs/implementation.md)
-5. [Testing](docs/testing.md)
+1. [Planning](Documentation/planning.md)
+2. [Requirements](Documentation/requirements.md)
+3. [Design](Documentation/design.md)
+4. [Implementation](Documentation/implementation.md)
+5. [Testing](Documentation/testing.md)
 
 ## Website (Hosted through Github Pages)
 https://guestie808.github.io/PubQuest/

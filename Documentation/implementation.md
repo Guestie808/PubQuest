@@ -81,12 +81,8 @@ CSS responsible for most, if not all of, the layout and aesthetics of the site.
 ### readme.md
 Describes overview of the project. Also provides links to the documentation files, as well as the OpenData Bristol dataset used, and a hosted version of the website throught GitHub Pages.
 
-TODO: provide a table listing the number of jslint warnings/reports for each module.
-
 ## Software Architecture
-TODO: Describe the major components of your architecture. Are any particular architectural styles being used?
-
-![SoftwareArchitecture]/(images/architecture.png)
+![softwareArchitecture](images/architecture.png!)
 
 ## Bristol Open Data API
 All APIs return the following fields: MAPEAST, MAPNORTH, TYPE_OF_PREMISE, TRADING_NAME, TRADING_ADDRESS, BUSINESS_CONTACT
